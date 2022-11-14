@@ -22,7 +22,7 @@ const createPDF = (qty, res) => {
         JsBarcode(whBarcode, "wh300");
         JsBarcode(woBarcode, `${60000 + x + 1}`);
         doc.image(whBarcode.toDataURL(), 41.4, 10.8, {width: 81.4});
-        doc.image('public/logo.PNG', 146.9, 2.9, {width: 58})
+        // doc.image('public/logo.PNG', 146.9, 2.9, {width: 58})
         doc.font('Helvetica-Bold');
         doc.fontSize(15.6)
         doc.text('FUEL SHOP REPAIR ORDER', 216, 9.2, {
