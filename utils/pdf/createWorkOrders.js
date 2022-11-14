@@ -3,7 +3,7 @@ const JsBarcode = require('jsbarcode');
 const { createCanvas } = require('canvas');
 var concat = require('concat-stream')
 
-const createPDF = (qty, res) => {
+const createPDF = (qty, base, res) => {
     let whBarcode = createCanvas();
     let woBarcode = createCanvas();
 
@@ -20,9 +20,9 @@ const createPDF = (qty, res) => {
     for(let x = 0; x < qty; x++) {
         doc.addPage()
         JsBarcode(whBarcode, "wh300");
-        JsBarcode(woBarcode, `${60000 + x + 1}`);
+        JsBarcode(woBarcode, `${base + x }`);
         doc.image(whBarcode.toDataURL(), 41.4, 10.8, {width: 81.4});
-        // doc.image('public/logo.PNG', 146.9, 2.9, {width: 58})
+        doc.image(process.cwd() + '/public/logo.png', 146.9, 2.9, {width: 58})
         doc.font('Helvetica-Bold');
         doc.fontSize(15.6)
         doc.text('FUEL SHOP REPAIR ORDER', 216, 9.2, {
