@@ -9,9 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "blob-stream": "^0.1.3",
-    "brfs": "^2.0.2",
-    "browserify": "^17.0.0",
     "canvas": "^2.10.2",
     "concat-stream": "^2.0.0",
     "jsbarcode": "^3.11.5",
